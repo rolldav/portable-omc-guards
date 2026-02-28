@@ -27,3 +27,6 @@ python3 -m pytest -q
 - Portable first: use `${HOME}` and workspace-relative paths, not machine-specific constants.
 - Low-noise factcheck: `quick` mode does not raise cwd-parity warnings by default.
 - Explicit readiness gate for Sentinel: do not propose/enable upstream if signal quality is degraded.
+
+## License
+MIT — see [LICENSE](LICENSE).

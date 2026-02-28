@@ -1,0 +1,20 @@
+{
+  "factcheck": {
+    "strict_project_patterns": ["prod-*", "medical-*"],
+    "forbidden_path_prefixes": ["${HOME}/.claude/plugins/cache/omc/"],
+    "forbidden_path_substrings": ["/.omc/", ".omc-config.json"],
+    "readonly_command_prefixes": ["ls ", "cat ", "find ", "grep ", "head ", "tail ", "stat ", "echo ", "wc "],
+    "warn_on_cwd_mismatch": true,
+    "enforce_cwd_parity_in_quick": false,
+    "warn_on_unverified_gates": true,
+    "warn_on_unverified_gates_when_no_source_files": false
+  },
+  "sentinel": {
+    "readiness": {
+      "min_pass_rate": 0.60,
+      "max_timeout_rate": 0.10,
+      "max_warn_plus_fail_rate": 0.40,
+      "min_reason_coverage_rate": 0.95
+    }
+  }
+}

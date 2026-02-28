@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/portable-omc-guards/sentinel_portable.schema.json",
+  "title": "Portable OMC Guards Policy",
+  "type": "object",
+  "properties": {
+    "factcheck": {
+      "type": "object",
+      "properties": {
+        "strict_project_patterns": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "forbidden_path_prefixes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "forbidden_path_substrings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "readonly_command_prefixes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "warn_on_cwd_mismatch": { "type": "boolean" },
+        "enforce_cwd_parity_in_quick": { "type": "boolean" },
+        "warn_on_unverified_gates": { "type": "boolean" },
+        "warn_on_unverified_gates_when_no_source_files": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "sentinel": {
+      "type": "object",
+      "properties": {
+        "readiness": {
+          "type": "object",
+          "properties": {
+            "min_pass_rate": { "type": "number" },
+            "max_timeout_rate": { "type": "number" },
+            "max_warn_plus_fail_rate": { "type": "number" },
+            "min_reason_coverage_rate": { "type": "number" }
+          },
+          "required": [
+            "min_pass_rate",
+            "max_timeout_rate",
+            "max_warn_plus_fail_rate",
+            "min_reason_coverage_rate"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

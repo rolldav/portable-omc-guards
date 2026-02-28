@@ -1,0 +1,9 @@
+[project]
+name = "portable-omc-guards"
+version = "0.1.0"
+description = "Portable factcheck and sentinel guard extraction"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["."]
